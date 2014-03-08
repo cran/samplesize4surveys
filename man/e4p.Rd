@@ -2,7 +2,7 @@
 \alias{e4p}
 \title{Statistical errors for the estimation of a single proportion}
 \usage{
-  e4p(N, n, p, DEFF = 1, conf = 0.95, plot = FALSE)
+e4p(N, n, p, DEFF = 1, conf = 0.95, plot = FALSE)
 }
 \arguments{
   \item{N}{The population size.}
@@ -22,19 +22,19 @@
   error) against the sample size.}
 }
 \value{
-  The coefficient of variation and the margin of error for
-  a predefined sample size.
+The coefficient of variation and the margin of error for a
+predefined sample size.
 }
 \description{
-  This function computes the cofficient of variation and
-  the standard error when estimating a single proportion
-  under a sample design.
+This function computes the cofficient of variation and the
+standard error when estimating a single proportion under a
+sample design.
 }
 \details{
-  We note that the margin of error is defined as: \deqn{cve
-  = \frac{\sqrt{Var(\hat{p})}}{\hat{p}}} Also, note that
-  the magin of error is defined as: \deqn{\varepsilon =
-  z_{1-\frac{alpha}{2}}\sqrt{Var(\hat{p})}}
+We note that the margin of error is defined as: \deqn{cve =
+\frac{\sqrt{Var(\hat{p})}}{\hat{p}}} Also, note that the
+magin of error is defined as: \deqn{\varepsilon =
+z_{1-\frac{\alpha}{2}}\sqrt{Var(\hat{p})}}
 }
 \examples{
 e4p(N=10000, n=400, p=0.5)
@@ -42,15 +42,15 @@ e4p(N=10000, n=400, p=0.5, plot=TRUE)
 e4p(N=10000, n=400, p=0.01, DEFF=3.45, conf=0.99, plot=TRUE)
 }
 \author{
-  Hugo Andres Gutierrez Rojas <hugogutierrez at
-  usantotomas.edu.co>
+Hugo Andres Gutierrez Rojas <hugogutierrez at
+usantotomas.edu.co>
 }
 \references{
-  Gutierrez, H. A. (2009), \emph{Estrategias de muestreo:
-  Diseno de encuestas y estimacion de parametros}.
-  Editorial Universidad Santo Tomas
+Gutierrez, H. A. (2009), \emph{Estrategias de muestreo:
+Diseno de encuestas y estimacion de parametros}. Editorial
+Universidad Santo Tomas
 }
 \seealso{
-  \code{\link{ss4p}}
+\code{\link{ss4p}}
 }
 

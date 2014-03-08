@@ -9,7 +9,7 @@
 #' The coefficient of variation and the margin of error for a predefined sample size.
 #' @details
 #' We note that the margin of error is defined as: \deqn{cve = \frac{\sqrt{Var(\hat{p})}}{\hat{p}}} 
-#' Also, note that the magin of error is defined as: \deqn{\varepsilon = z_{1-\frac{alpha}{2}}\sqrt{Var(\hat{p})}}
+#' Also, note that the magin of error is defined as: \deqn{\varepsilon = z_{1-\frac{\alpha}{2}}\sqrt{Var(\hat{p})}}
 #' 
 #' @author Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
 #' @param N The population size.
@@ -34,8 +34,8 @@ e4p <- function(N, n, p, DEFF = 1, conf = 0.95, plot = FALSE){
   Z = 1-((1-conf)/2)
   f=n/N
   VAR=DEFF*(1/n)*(1-f)*S2
-  CVE=sqrt(VAR)/p
-  ME=qnorm(Z)*sqrt(VAR)
+  CVE=100*sqrt(VAR)/p
+  ME=100*qnorm(Z)*sqrt(VAR)
   
   if(plot == TRUE) {
     

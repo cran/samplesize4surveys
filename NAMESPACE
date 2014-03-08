@@ -1,3 +1,7 @@
+export(ICC)
 export(e4p)
+export(ss2s4m)
+export(ss2s4p)
+export(ss4m)
 export(ss4p)
 import(TeachingSampling)

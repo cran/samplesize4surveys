@@ -2,8 +2,7 @@
 \alias{ss4p}
 \title{The required sample size for estimating a single proportion}
 \usage{
-  ss4p(N, p, DEFF = 1, conf = 0.95, cve = 0.05, me = 0.03,
-    plot = FALSE)
+ss4p(N, p, DEFF = 1, conf = 0.95, cve = 0.05, me = 0.03, plot = FALSE)
 }
 \arguments{
   \item{N}{The population size.}
@@ -27,18 +26,19 @@
   error) against the sample size.}
 }
 \description{
-  This function returns the minimum sample size required
-  for estimating a single proportion subjecto to predefined
-  errors.
+This function returns the minimum sample size required for
+estimating a single proportion subjecto to predefined
+errors.
 }
 \details{
-  Note that the minimun sample size to achieve a margin of
-  error \eqn{\varepsilon} is defined by: \deqn{n =
-  \frac{n_0}{1+\frac{n_0}{N}}} Where
-  \deqn{n_0=\frac{z^2_{1-\frac{alpha}{2}}S^2}{\varepsilon}}
-  and \deqn{S^2=p(1-p)DEFF} Also note that the minimun
-  sample size to achieve a margin of error \eqn{cve} is
-  defined by: \deqn{n = \frac{S^2}{p^2cve^2=\frac{S^2}{N}}}
+Note that the minimun sample size to achieve a particular
+margin of error \eqn{\varepsilon} is defined by: \deqn{n =
+\frac{n_0}{1+\frac{n_0}{N}}} Where
+\deqn{n_0=\frac{z^2_{1-\frac{alpha}{2}}S^2}{\varepsilon}}
+and \deqn{S^2=p(1-p)DEFF} Also note that the minimun sample
+size to achieve a particular coefficient of variation
+\eqn{cve} is defined by: \deqn{n =
+\frac{S^2}{p^2cve^2+\frac{S^2}{N}}}
 }
 \examples{
 ss4p(N=10000, p=0.5, cve=0.05, me=0.03)
@@ -59,15 +59,15 @@ ss4p(N, p, DEFF=1, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 ss4p(N, p, DEFF=3.45, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 }
 \author{
-  Hugo Andres Gutierrez Rojas <hugogutierrez at
-  usantotomas.edu.co>
+Hugo Andres Gutierrez Rojas <hugogutierrez at
+usantotomas.edu.co>
 }
 \references{
-  Gutierrez, H. A. (2009), \emph{Estrategias de muestreo:
-  Diseno de encuestas y estimacion de parametros}.
-  Editorial Universidad Santo Tomas
+Gutierrez, H. A. (2009), \emph{Estrategias de muestreo:
+Diseno de encuestas y estimacion de parametros}. Editorial
+Universidad Santo Tomas
 }
 \seealso{
-  \code{\link{e4p}}
+\code{\link{e4p}}
 }
 

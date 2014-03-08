@@ -6,13 +6,13 @@
 #' @description 
 #' This function returns the minimum sample size required for estimating a single proportion subjecto to predefined errors.
 #' @details
-#' Note that the minimun sample size to achieve a margin of error \eqn{\varepsilon} is defined by: 
+#' Note that the minimun sample size to achieve a particular margin of error \eqn{\varepsilon} is defined by: 
 #' \deqn{n = \frac{n_0}{1+\frac{n_0}{N}}}
 #' Where \deqn{n_0=\frac{z^2_{1-\frac{alpha}{2}}S^2}{\varepsilon}}
 #' and
 #' \deqn{S^2=p(1-p)DEFF}
-#' Also note that the minimun sample size to achieve a margin of error \eqn{cve} is defined by:
-#' \deqn{n = \frac{S^2}{p^2cve^2=\frac{S^2}{N}}} 
+#' Also note that the minimun sample size to achieve a particular coefficient of variation \eqn{cve} is defined by:
+#' \deqn{n = \frac{S^2}{p^2cve^2+\frac{S^2}{N}}} 
 #'   
 #' @author Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
 #' @param N The population size.
@@ -80,10 +80,10 @@ ss4p = function(N, p, DEFF=1, conf=0.95, cve=0.05, me=0.03, plot=FALSE){
   
   msg <- cat('With the parameters of this function: N =', N, 'p =', p, 'DEFF = ',
              DEFF, 'conf =', conf, '.\n
-             The estimated sample size to obatin a maximun coefficient of variation of', 100*cve, '% is n=', round(n.cve), '.
-             The estimated sample size to obatin a maximun margin of error of', 100*me, '% is n=', round(n.me), '. \n \n')
+             The estimated sample size to obatin a maximun coefficient of variation of', 100*cve, '% is n=', ceiling(n.cve), '.
+             The estimated sample size to obatin a maximun margin of error of', 100*me, '% is n=', ceiling(n.me), '. \n \n')
   
-  result <- list(n.cve = round(n.cve), n.me = round(n.me))
+  result <- list(n.cve = ceiling(n.cve), n.me = ceiling(n.me))
   result 
 }
 
