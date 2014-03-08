@@ -98,12 +98,12 @@
 ICC <- function(y, cl){
   cl <- as.factor(cl)
   N <- length(y)
-  M <- table(cl)
+  Ni <- table(cl)
   t1 <- (tapply(y,cl,mean)-mean(y))^2
   TSS <- (N-1)*var(y)
-  BSS <- sum(M*t1)
+  BSS <- sum(Ni*t1)
   WSS <- TSS - BSS
-  ICC <- 1-(mean(M)/(mean(M)-1))*WSS/TSS
+  ICC <- 1-(sum(Ni)/sum(Ni-1))*(WSS/TSS)
   res <- list(TSS=TSS, BSS=BSS, WSS=WSS, ICC=ICC)
   res
 }

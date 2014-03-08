@@ -8,7 +8,7 @@
 #' @details
 #' Note that the minimun sample size to achieve a particular margin of error \eqn{\varepsilon} is defined by: 
 #' \deqn{n = \frac{n_0}{1+\frac{n_0}{N}}}
-#' Where \deqn{n_0=\frac{z^2_{1-\frac{alpha}{2}}S^2}{\varepsilon}}
+#' Where \deqn{n_0=\frac{z^2_{1-\frac{\alpha}{2}}S^2}{\varepsilon}}
 #' and
 #' \deqn{S^2=p(1-p)DEFF}
 #' Also note that the minimun sample size to achieve a particular coefficient of variation \eqn{cve} is defined by:
@@ -55,7 +55,7 @@ ss4p = function(N, p, DEFF=1, conf=0.95, cve=0.05, me=0.03, plot=FALSE){
  
   if(plot == TRUE) {
     
-    nseq=seq(1,N,10)
+    nseq=seq(100,N,10)
     cveseq=rep(NA,length(nseq))
     meseq=rep(NA,length(nseq))
     

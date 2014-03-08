@@ -6,13 +6,13 @@
 #' @description 
 #' This function returns the minimum sample size required for estimating a single mean subjec to predefined errors.
 #' @details
-#' Note that the minimun sample size to achieve a margin of error \eqn{\varepsilon} is defined by: 
+#' Note that the minimun sample size to achieve a relative margin of error \eqn{\varepsilon} is defined by: 
 #' \deqn{n = \frac{n_0}{1+\frac{n_0}{N}}}
-#' Where \deqn{n_0=\frac{z^2_{1-\frac{alpha}{2}}S^2}{\varepsilon\mu}}
+#' Where \deqn{n_0=\frac{z^2_{1-\frac{alpha}{2}}S^2}{\varepsilon^2 \mu^2}}
 #' and
-#' \deqn{S^2=\sigma^2DEFF}
-#' Also note that the minimun sample size to achieve a margin of error \eqn{cve} is defined by:
-#' \deqn{n = \frac{S^2}{p^2cve^2+\frac{S^2}{N}}} 
+#' \deqn{S^2=\sigma^2 DEFF}
+#' Also note that the minimun sample size to achieve a coefficient of variation \eqn{cve} is defined by:
+#' \deqn{n = \frac{S^2}{\bar{y}_U^2 cve^2 + \frac{S^2}{N}}} 
 #'   
 #' @author Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
 #' @param N The population size.
@@ -58,7 +58,7 @@ ss4m = function(N, mu, sigma, DEFF=1, conf=0.95, cve=0.05, rme=0.03, plot=FALSE)
   
   if(plot == TRUE) {
     
-    nseq=seq(1,N,10)
+    nseq=seq(100,N,10)
     cveseq=rep(NA,length(nseq))
     meseq=rep(NA,length(nseq))
     
