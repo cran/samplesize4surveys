@@ -72,12 +72,12 @@ ss4mH = function(N, mu, mu0, sigma, DEFF=1, conf=0.95, power=0.8, plot=FALSE){
     for(k in 1:length(nseq)){
       fseq=nseq[k]/N
       varseq=(1/nseq[k])*(1-fseq)*S2*(qnorm(Za)+qnorm(Zb))^2
-      Dseq[k]=100*sqrt(varseq)
+      Dseq[k]=sqrt(varseq)
     }
     
-    plot(nseq,Dseq, type="l", lty=2, pch=1, col=3,ylab="Null effect (D) %",xlab="Sample size")
-    points(n.hyp, 100*D, pch=8,bg = "blue")
-    abline(h=100*D,lty=3)
+    plot(nseq,Dseq, type="l", lty=2, pch=1, col=3,ylab="Null effect (D)",xlab="Sample size")
+    points(n.hyp, D, pch=8,bg = "blue")
+    abline(h=D,lty=3)
     abline(v=n.hyp,lty=3)
   }
   

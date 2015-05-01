@@ -29,7 +29,7 @@ ss4dmH(N, mu1, mu2, sigma1, sigma2, D, DEFF = 1, conf = 0.95, power = 0.8,
 \item{plot}{Optionally plot the effect against the sample size.}
 }
 \description{
-This function returns the minimum sample size required for testing a null hyphotesis regarding a single proportion.
+This function returns the minimum sample size required for testing a null hyphotesis regarding a single difference of proportions.
 }
 \details{
 We assume that it is of interest to test the following set of hyphotesis:

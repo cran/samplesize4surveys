@@ -4,7 +4,7 @@
 #' @title
 #' The required sample size for testing a null hyphotesis for a single difference of proportions
 #' @description 
-#' This function returns the minimum sample size required for testing a null hyphotesis regarding a single proportion.
+#' This function returns the minimum sample size required for testing a null hyphotesis regarding a single difference of proportions.
 #' @details
 #' We assume that it is of interest to test the following set of hyphotesis:
 #' \deqn{H_0: mu_1 - mu_2 = 0 \ \ \ \ vs. \ \ \ \ H_a: mu_1 - mu_2 = D \neq 0 }
@@ -63,7 +63,7 @@
 
 ss4dmH = function(N, mu1, mu2, sigma1, sigma2, D, DEFF=1, conf=0.95, power=0.8, plot=FALSE){
   
-  S2 = (sigma1 + sigma2) * DEFF
+  S2 = (sigma1^2 + sigma2^2) * DEFF
   Za = conf
   Zb = power 
   Z = qnorm(Za)+qnorm(Zb)
@@ -78,12 +78,12 @@ ss4dmH = function(N, mu1, mu2, sigma1, sigma2, D, DEFF=1, conf=0.95, power=0.8, 
     for(k in 1:length(nseq)){
       fseq=nseq[k]/N
       varseq=(1/nseq[k])*(1-fseq)*S2*(qnorm(Za)+qnorm(Zb))^2
-      Dseq[k]=100*sqrt(varseq)
+      Dseq[k]=sqrt(varseq)
     }
     
-    plot(nseq,Dseq, type="l", lty=2, pch=1, col=3,ylab="Null effect (D) %",xlab="Sample size")
-    points(n.hyp, 100*D, pch=8,bg = "blue")
-    abline(h=100*D,lty=3)
+    plot(nseq,Dseq, type="l", lty=2, pch=1, col=3,ylab="Null effect (D)",xlab="Sample size")
+    points(n.hyp, D, pch=8,bg = "blue")
+    abline(h=D,lty=3)
     abline(v=n.hyp,lty=3)
   }
   

@@ -4,14 +4,14 @@
 \alias{e4p}
 \title{Statistical errors for the estimation of a single proportion}
 \usage{
-e4p(N, n, p, DEFF = 1, conf = 0.95, plot = FALSE)
+e4p(N, n, P, DEFF = 1, conf = 0.95, plot = FALSE)
 }
 \arguments{
 \item{N}{The population size.}
 
 \item{n}{The sample size.}
 
-\item{p}{The value of the estimated proportion.}
+\item{P}{The value of the estimated proportion.}
 
 \item{DEFF}{The design effect of the sample design. By default \code{DEFF = 1}, which corresponds to a simple random sampling design.}
 
@@ -26,13 +26,13 @@ The coefficient of variation and the margin of error for a predefined sample siz
 This function computes the cofficient of variation and the standard error when estimating a single proportion under a sample design.
 }
 \details{
-We note that the margin of error is defined as: \deqn{cve = \frac{\sqrt{Var(\hat{p})}}{\hat{p}}}
+We note that the coefficent of variation is defined as: \deqn{cve = \frac{\sqrt{Var(\hat{p})}}{\hat{p}}}
 Also, note that the magin of error is defined as: \deqn{\varepsilon = z_{1-\frac{\alpha}{2}}\sqrt{Var(\hat{p})}}
 }
 \examples{
-e4p(N=10000, n=400, p=0.5)
-e4p(N=10000, n=400, p=0.5, plot=TRUE)
-e4p(N=10000, n=400, p=0.01, DEFF=3.45, conf=0.99, plot=TRUE)
+e4p(N=10000, n=400, P=0.5)
+e4p(N=10000, n=400, P=0.5, plot=TRUE)
+e4p(N=10000, n=400, P=0.01, DEFF=3.45, conf=0.99, plot=TRUE)
 }
 \author{
 Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>

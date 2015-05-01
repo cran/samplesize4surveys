@@ -4,12 +4,12 @@
 \alias{ss4p}
 \title{The required sample size for estimating a single proportion}
 \usage{
-ss4p(N, p, DEFF = 1, conf = 0.95, cve = 0.05, me = 0.03, plot = FALSE)
+ss4p(N, P, DEFF = 1, conf = 0.95, cve = 0.05, me = 0.03, plot = FALSE)
 }
 \arguments{
 \item{N}{The population size.}
 
-\item{p}{The value of the estimated proportion.}
+\item{P}{The value of the estimated proportion.}
 
 \item{DEFF}{The design effect of the sample design. By default \code{DEFF = 1}, which corresponds to a simple random sampling design.}
 
@@ -29,14 +29,14 @@ Note that the minimun sample size to achieve a particular margin of error \eqn{\
 \deqn{n = \frac{n_0}{1+\frac{n_0}{N}}}
 Where \deqn{n_0=\frac{z^2_{1-\frac{\alpha}{2}}S^2}{\varepsilon}}
 and
-\deqn{S^2=p(1-p)DEFF}
+\deqn{S^2=P(1-P)DEFF}
 Also note that the minimun sample size to achieve a particular coefficient of variation \eqn{cve} is defined by:
-\deqn{n = \frac{S^2}{p^2cve^2+\frac{S^2}{N}}}
+\deqn{n = \frac{S^2}{P^2cve^2+\frac{S^2}{N}}}
 }
 \examples{
-ss4p(N=10000, p=0.5, cve=0.05, me=0.03)
-ss4p(N=10000, p=0.5, cve=0.05, me=0.03, plot=TRUE)
-ss4p(N=10000, p=0.01, DEFF=3.45, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
+ss4p(N=10000, P=0.5, cve=0.05, me=0.03)
+ss4p(N=10000, P=0.5, cve=0.05, me=0.03, plot=TRUE)
+ss4p(N=10000, P=0.01, DEFF=3.45, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 
 ##########################
 # Example with Lucy data #
@@ -45,11 +45,11 @@ ss4p(N=10000, p=0.01, DEFF=3.45, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 data(Lucy)
 attach(Lucy)
 N <- nrow(Lucy)
-p <- prop.table(table(SPAM))[1]
+P <- prop.table(table(SPAM))[1]
 # The minimum sample size for simple random sampling
-ss4p(N, p, DEFF=1, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
+ss4p(N, P, DEFF=1, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 # The minimum sample size for a complex sampling design
-ss4p(N, p, DEFF=3.45, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
+ss4p(N, P, DEFF=3.45, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 }
 \author{
 Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
