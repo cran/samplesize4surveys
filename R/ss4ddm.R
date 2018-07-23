@@ -9,7 +9,7 @@
 #' Note that the minimun sample size to achieve a relative margin of error \eqn{\varepsilon} is defined by: 
 #' \deqn{n = \frac{n_0}{1+\frac{n_0}{N}}}
 #' Where \deqn{n_0=\frac{z^2_{1-\frac{alpha}{2}}S^2}{\varepsilon^2 \mu^2}} and 
-#' \eqn{S^2=(\sigma_1^2 + \sigma_2^2 + \sigma_3^2 + \sigma_4^2) * DEFF}
+#' \eqn{S^2=(\sigma_1^2 + \sigma_2^2 + \sigma_3^2 + \sigma_4^2) * (1 - (T * R)) * DEFF}
 #' Also note that the minimun sample size to achieve a coefficient of variation \eqn{cve} is defined by:
 #' \deqn{n = \frac{S^2}{|(\bar{y}_1-\bar{y}_2) - (\bar{y}_3-\bar{y}_4) |^2 cve^2 + \frac{S^2}{N}}} 
 #'   
@@ -111,8 +111,8 @@ ss4ddm = function(N, mu1, mu2, mu3, mu4, sigma1, sigma2, sigma3, sigma4, DEFF=1,
   
   msg <- cat('With the parameters of this function: N =', N, 'mu1 =', mu1, 'mu2 =', mu2, 'mu3 =', mu3, 'mu4 =', mu4,  
              'sigma1 = ', sigma1, 'sigma2 = ', sigma2, 'sigma3 = ', sigma3, 'sigma4 = ', sigma4, 'DEFF = ', DEFF, 'conf =', conf, '.\n
-             The estimated sample size to obatin a maximun coefficient of variation of', 100*cve, '% is n=', ceiling(n.cve), '.
-             The estimated sample size to obatin a maximun margin of error of', 100*rme, '% is n=', ceiling(n.rme), '. \n \n')
+             The estimated sample size to obtain a maximun coefficient of variation of', 100*cve, '% is n=', ceiling(n.cve), '.
+             The estimated sample size to obtain a maximun margin of error of', 100*rme, '% is n=', ceiling(n.rme), '. \n \n')
   
   result <- list(n.cve = ceiling(n.cve), n.rme = ceiling(n.rme))
   result 

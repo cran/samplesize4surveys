@@ -38,7 +38,7 @@ This function returns the minimum sample size required for estimating a double d
 \details{
 Note that the minimun sample size (for each group at each wave) to achieve a particular margin of error \eqn{\varepsilon} is defined by: 
 \deqn{n = \frac{n_0}{1+\frac{n_0}{N}}}
-Where \deqn{n_0=\frac{z^2_{1-\frac{\alpha}{2}}S^2}{\varepsilon}}
+Where \deqn{n_0=\frac{z^2_{1-\frac{\alpha}{2}}S^2}{\varepsilon^2}}
 and
 \deqn{S^2 = (P1 * Q1 + P2 * Q2 + P3 * Q3 + P4 * Q4) * (1 - (T * R)) * DEFF}
 Also note that the minimun sample size to achieve a particular coefficient of variation \eqn{cve} is defined by:
@@ -73,13 +73,12 @@ ss4ddp(N, P1, P2, P3, P4, conf=0.95, cve=0.05, me=0.03, plot=TRUE)
 # The minimum sample size for a complex sampling design
 ss4ddp(N, P1, P2, P3, P4, T = 0.5, R = 0.5, conf=0.95, cve=0.05, me=0.03, plot=TRUE)
 }
-\author{
-Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
-}
 \references{
 Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas y estimacion de parametros}. Editorial Universidad Santo Tomas
 }
 \seealso{
 \code{\link{ss4dp}}
 }
-
+\author{
+Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
+}

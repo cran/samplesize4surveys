@@ -40,7 +40,7 @@ We assume that it is of interest to test the following set of hyphotesis:
 \deqn{H_0: (P_1 - P_2) - (P_3 - P_4) = 0 \ \ \ \ vs. \ \ \ \ H_a:  (P_1 - P_2) - (P_3 - P_4) = D \neq 0 }
 Note that the minimun sample size, restricted to the predefined power \eqn{\beta} and confidence \eqn{1-\alpha}, is defined by: 
 \deqn{n = \frac{S^2}{\frac{D^2}{(z_{1-\alpha} + z_{\beta})^2}+\frac{S^2}{N}}}
-Where \eqn{S^2=(P_1Q_1+P_2Q_2+P_3Q_3+P_4Q_4)DEFF} and \eqn{Q_i=1-P_i} for \eqn{i=1,2, 3, 4}.
+Where \eqn{S^2 = (P1 * Q1 + P2 * Q2 + P3 * Q3 + P4 * Q4) * (1 - (T * R)) * DEFF} and \eqn{Q_i=1-P_i} for \eqn{i=1,2, 3, 4}.
 }
 \examples{
 ss4ddpH(N = 100000, P1 = 0.5, P2 = 0.5, P3 = 0.5, P4 = 0.5, D=0.03)
@@ -69,13 +69,12 @@ ss4ddpH(N, P1, P2, P3, P4, D = 0.05, plot=TRUE)
 # The minimum sample size for a complex sampling design
 ss4ddpH(N, P1, P2, P3, P4, D = 0.05, DEFF = 2, T = 0.5, R = 0.5, conf=0.95, plot=TRUE)
 }
-\author{
-Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
-}
 \references{
 Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas y estimacion de parametros}. Editorial Universidad Santo Tomas
 }
 \seealso{
 \code{\link{ss4pH}}
 }
-
+\author{
+Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
+}

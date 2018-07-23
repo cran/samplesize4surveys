@@ -4,8 +4,8 @@
 \alias{ss4dp}
 \title{The required sample size for estimating a single difference of proportions}
 \usage{
-ss4dp(N, P1, P2, DEFF = 1, conf = 0.95, cve = 0.05, me = 0.03,
-  plot = FALSE)
+ss4dp(N, P1, P2, DEFF = 1, conf = 0.95, cve = 0.05, me = 0.03, T = 0,
+  R = 1, plot = FALSE)
 }
 \arguments{
 \item{N}{The maximun population size between the groups (strata) that we want to compare.}
@@ -22,6 +22,10 @@ ss4dp(N, P1, P2, DEFF = 1, conf = 0.95, cve = 0.05, me = 0.03,
 
 \item{me}{The maximun margin of error that can be allowed for the estimation.}
 
+\item{T}{The overlap between waves. By default \code{T = 0}.}
+
+\item{R}{The correlation between waves. By default \code{R = 1}.}
+
 \item{plot}{Optionally plot the errors (cve and margin of error) against the sample size.}
 }
 \description{
@@ -30,9 +34,9 @@ This function returns the minimum sample size required for estimating a single p
 \details{
 Note that the minimun sample size to achieve a particular margin of error \eqn{\varepsilon} is defined by: 
 \deqn{n = \frac{n_0}{1+\frac{n_0}{N}}}
-Where \deqn{n_0=\frac{z^2_{1-\frac{\alpha}{2}}S^2}{\varepsilon}}
+Where \deqn{n_0=\frac{z^2_{1-\frac{\alpha}{2}}S^2}{\varepsilon^2}}
 and
-\deqn{S^2=p(1-p)DEFF}
+\deqn{S^2 = (P1 * Q1 + P2 * Q2) * (1 - (T * R)) * DEFF}
 Also note that the minimun sample size to achieve a particular coefficient of variation \eqn{cve} is defined by:
 \deqn{n = \frac{S^2}{p^2cve^2+\frac{S^2}{N}}}
 }
@@ -40,6 +44,7 @@ Also note that the minimun sample size to achieve a particular coefficient of va
 ss4dp(N=100000, P1=0.5, P2=0.55, cve=0.05, me=0.03)
 ss4dp(N=100000, P1=0.5, P2=0.55, cve=0.05, me=0.03, plot=TRUE)
 ss4dp(N=100000, P1=0.5, P2=0.55, DEFF=3.45, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
+ss4dp(N=100000, P1=0.5, P2=0.55, DEFF=3.45, T=0.5, R=0.5, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 
 #############################
 # Example with BigLucy data #
@@ -57,13 +62,12 @@ ss4dp(N, P1, P2, DEFF=1, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 # The minimum sample size for a complex sampling design
 ss4dp(N, P1, P2, DEFF=3.45, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 }
-\author{
-Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
-}
 \references{
 Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas y estimacion de parametros}. Editorial Universidad Santo Tomas
 }
 \seealso{
 \code{\link{e4p}}
 }
-
+\author{
+Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
+}

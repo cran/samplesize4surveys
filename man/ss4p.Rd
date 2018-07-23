@@ -27,7 +27,7 @@ This function returns the minimum sample size required for estimating a single p
 \details{
 Note that the minimun sample size to achieve a particular margin of error \eqn{\varepsilon} is defined by: 
 \deqn{n = \frac{n_0}{1+\frac{n_0}{N}}}
-Where \deqn{n_0=\frac{z^2_{1-\frac{\alpha}{2}}S^2}{\varepsilon}}
+Where \deqn{n_0=\frac{z^2_{1-\frac{\alpha}{2}}S^2}{\varepsilon^2}}
 and
 \deqn{S^2=P(1-P)DEFF}
 Also note that the minimun sample size to achieve a particular coefficient of variation \eqn{cve} is defined by:
@@ -51,13 +51,12 @@ ss4p(N, P, DEFF=1, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 # The minimum sample size for a complex sampling design
 ss4p(N, P, DEFF=3.45, conf=0.99, cve=0.03, me=0.03, plot=TRUE)
 }
-\author{
-Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
-}
 \references{
 Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas y estimacion de parametros}. Editorial Universidad Santo Tomas
 }
 \seealso{
 \code{\link{e4p}}
 }
-
+\author{
+Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
+}

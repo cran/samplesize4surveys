@@ -49,7 +49,7 @@ We assume that it is of interest to test the following set of hyphotesis:
 Note that the minimun sample size, restricted to the predefined power \eqn{\beta} and confidence \eqn{1-\alpha}, 
 is defined by: 
 \deqn{n = \frac{S^2}{\frac{D^2}{(z_{1-\alpha} + z_{\beta})^2}+\frac{S^2}{N}}}
-where \eqn{S^2=(\sigma_1^2 + \sigma_2^2 + \sigma_3^2 + \sigma_4^2) * DEFF}
+where \eqn{S^2=(\sigma_1^2 + \sigma_2^2 + \sigma_3^2 + \sigma_4^2) * (1 - (T * R)) * DEFF}
 }
 \examples{
 ss4ddmH(N = 100000, mu1=50, mu2=55, mu3=50, mu4=65, 
@@ -74,10 +74,10 @@ N1 <- table(BigLucyT0$ISO)[1]
 N2 <- table(BigLucyT0$ISO)[2]
 N <- max(N1,N2)
 
-BigLucyT0.yes <- subset(BigLucyT0, ISO == "yes")
-BigLucyT0.no <- subset(BigLucyT0, ISO == "no")
-BigLucyT1.yes <- subset(BigLucyT1, ISO == "yes")
-BigLucyT1.no <- subset(BigLucyT1, ISO == "no")
+BigLucyT0.yes <- subset(BigLucyT0, ISO == 'yes')
+BigLucyT0.no <- subset(BigLucyT0, ISO == 'no')
+BigLucyT1.yes <- subset(BigLucyT1, ISO == 'yes')
+BigLucyT1.no <- subset(BigLucyT1, ISO == 'no')
 mu1 <- mean(BigLucyT0.yes$Income)
 mu2 <- mean(BigLucyT0.no$Income)
 mu3 <- mean(BigLucyT1.yes$Income)
@@ -94,13 +94,12 @@ sigma4 <- sd(BigLucyT1.no$Income)
 ss4ddmH(N, mu1, mu2, mu3, mu4, sigma1, sigma2, sigma3, sigma4,
  D = 3, conf = 0.99, power = 0.9, DEFF = 3.45, plot=TRUE)
 }
-\author{
-Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
-}
 \references{
 Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas y estimacion de parametros}. Editorial Universidad Santo Tomas
 }
 \seealso{
 \code{\link{ss4pH}}
 }
-
+\author{
+Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
+}
