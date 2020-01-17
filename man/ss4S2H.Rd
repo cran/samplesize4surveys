@@ -4,8 +4,7 @@
 \alias{ss4S2H}
 \title{The required sample size for testing a null hyphotesis for a single variance}
 \usage{
-ss4S2H(N, S2, S20, K = 0, DEFF = 1, conf = 0.95, power = 0.8,
-  plot = FALSE)
+ss4S2H(N, S2, S20, K = 0, DEFF = 1, conf = 0.95, power = 0.8, plot = FALSE)
 }
 \arguments{
 \item{N}{The population size.}
@@ -61,5 +60,5 @@ Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas y es
 \code{\link{e4p}}
 }
 \author{
-Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
+Hugo Andres Gutierrez Rojas <hagutierrezro at gmail.com>
 }

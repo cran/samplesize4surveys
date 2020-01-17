@@ -4,8 +4,7 @@
 \alias{e4dp}
 \title{Statistical errors for the estimation of a difference of proportions}
 \usage{
-e4dp(N, n, P1, P2, DEFF = 1, T = 0, R = 1, conf = 0.95,
-  plot = FALSE)
+e4dp(N, n, P1, P2, DEFF = 1, T = 0, R = 1, conf = 0.95, plot = FALSE)
 }
 \arguments{
 \item{N}{The population size.}
@@ -49,5 +48,5 @@ Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas y es
 \code{\link{ss4p}}
 }
 \author{
-Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
+Hugo Andres Gutierrez Rojas <hagutierrezro at gmail.com>
 }

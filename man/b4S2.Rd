@@ -4,8 +4,7 @@
 \alias{b4S2}
 \title{Statistical power for a hyphotesis testing on a single variance}
 \usage{
-b4S2(N, n, S2, S20, K = 0, DEFF = 1, conf = 0.95, power = 0.8,
-  plot = FALSE)
+b4S2(N, n, S2, S20, K = 0, DEFF = 1, conf = 0.95, power = 0.8, plot = FALSE)
 }
 \arguments{
 \item{N}{The population size.}
@@ -47,5 +46,5 @@ Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas y es
 \code{\link{ss4p}}
 }
 \author{
-Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
+Hugo Andres Gutierrez Rojas <hagutierrezro at gmail.com>
 }

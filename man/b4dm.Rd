@@ -4,8 +4,7 @@
 \alias{b4dm}
 \title{Statistical power for a hyphotesis testing on a difference of means.}
 \usage{
-b4dm(N, n, mu1, mu2, sigma1, sigma2, D, DEFF = 1, conf = 0.95,
-  plot = FALSE)
+b4dm(N, n, mu1, mu2, sigma1, sigma2, D, DEFF = 1, conf = 0.95, plot = FALSE)
 }
 \arguments{
 \item{N}{The population size.}
@@ -51,5 +50,5 @@ Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas y es
 \code{\link{ss4p}}
 }
 \author{
-Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
+Hugo Andres Gutierrez Rojas <hagutierrezro at gmail.com>
 }

@@ -20,7 +20,7 @@ e4p(N, n, P, DEFF = 1, conf = 0.95, plot = FALSE)
 \item{plot}{Optionally plot the errors (cve and margin of error) against the sample size.}
 }
 \value{
-The coefficient of variation and the margin of error for a predefined sample size.
+The coefficient of variation, the margin of error and the relative margin of error for a predefined sample size.
 }
 \description{
 This function computes the cofficient of variation and the standard error when estimating a single proportion under a sample design.
@@ -41,5 +41,5 @@ Gutierrez, H. A. (2009), \emph{Estrategias de muestreo: Diseno de encuestas y es
 \code{\link{ss4p}}
 }
 \author{
-Hugo Andres Gutierrez Rojas <hugogutierrez at usantotomas.edu.co>
+Hugo Andres Gutierrez Rojas <hagutierrezro at gmail.com>
 }
